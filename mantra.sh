@@ -10,12 +10,18 @@ sudo apt update && sudo apt upgrade -y
 # sudo add-apt-repository ppa:graphics-drivers/ppa
 # ubuntu-drivers devices
 # sudo ubuntu-drivers autoinstall
+# or
+# sudo apt install firmware-linux -y #drivers
+
 
 # Common packages install
 sudo apt install tree -y
 sudo apt install firejail -y
 sudo apt install htop -y
 sudo apt install ufw -y
+sudo apt install nmap -y
+sudo apt install locate -y
+
 
 # SDK man install
 sudo curl -s "https://get.sdkman.io" | bash
