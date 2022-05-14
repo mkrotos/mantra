@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mail='example@mail'
+#mail='example@mail'
 
 # System update
 sudo apt update && sudo apt upgrade -y
@@ -21,6 +21,13 @@ sudo apt install htop -y
 sudo apt install ufw -y
 sudo apt install nmap -y
 sudo apt install locate -y
+sudo apt install vim -y
+sudo apt install curl -y
+
+# Install zsh
+sudo apt install zsh -y
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# chsh -s /usr/bin/zsh
 
 
 # SDK man install
@@ -31,14 +38,15 @@ sdk update
 sdk install java
 sdk install kotlin
 
-# Fish shell install
-sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt update
-sudo apt install fish -y
-cp ./fish_functions/* ~/.config/fish/functions/
+# Fish shell install - crashes when installed with snap
+#sudo apt-add-repository ppa:fish-shell/release-3
+#sudo apt update
+#sudo apt install fish -y
+# mkdir ~/.config/fish/functions
+# cp ./fish_functions/* ~/.config/fish/functions/
 
 # SDK man support for the fish shell
-sudo fisher install reitzig/sdkman-for-fish@v1.4.0
+# sudo fisher install reitzig/sdkman-for-fish@v1.4.0
 
 
 # Install snapd's for ubuntu
@@ -60,7 +68,7 @@ sudo snap install bitwarden
 
 
 # Generate ssh keys
-ssh-keygen -t ed25519 -C $mail
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+#ssh-keygen -t ed25519 -C $mail
+#eval "$(ssh-agent -s)"
+#ssh-add ~/.ssh/id_ed25519
 
