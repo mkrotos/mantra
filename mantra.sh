@@ -72,3 +72,5 @@ sudo snap install bitwarden
 #eval "$(ssh-agent -s)"
 #ssh-add ~/.ssh/id_ed25519
 
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
