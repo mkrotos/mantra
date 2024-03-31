@@ -1,6 +1,5 @@
-#!/bin/bash
+#!/bin/zsh
 
-#mail='example@mail'
 
 # System update
 sudo apt update && sudo apt upgrade -y
@@ -24,15 +23,16 @@ sudo apt install locate -y
 sudo apt install vim -y
 sudo apt install curl -y
 
-# Install zsh
-sudo apt install zsh -y
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# chsh -s /usr/bin/zsh
 
+echo "source ~/.aliases" >> ~/.zshrc
+touch ~/.aliases
+
+mkdir -p ~/.local/bin
+echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.zshrc
 
 # SDK man install
 sudo curl -s "https://get.sdkman.io" | bash
-sudo source "$HOME/.sdkman/bin/sdkman-init.sh"
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk version
 sdk update
 sdk install java
@@ -53,7 +53,7 @@ sdk install kotlin
 sudo apt install snapd -y
 sudo snap install code --classic
 sudo snap install intellij-idea-community --classic
-sudo snap install docker
+#sudo snap install docker #docker from snap have bugs
 sudo snap install postman
 sudo snap install node --classic
 sudo snap install chromium
@@ -67,10 +67,11 @@ sudo snap install bitwarden
 # sudo apt-get install -y nodejs
 
 
-# Generate ssh keys
-#ssh-keygen -t ed25519 -C $mail
-#eval "$(ssh-agent -s)"
-#ssh-add ~/.ssh/id_ed25519
-
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# Docker
+./docker-setup.sh
+
+# Clean up
+sudo apt autoremove
