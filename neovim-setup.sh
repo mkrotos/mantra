@@ -41,3 +41,5 @@ echo "Run :LazyHealth in nvim"
 #echo "alias vim='nvim'" >> ~/.aliases
 
 brew install rm-improved # rip -> save rm
+
+brew install lazygit
