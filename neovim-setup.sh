@@ -22,24 +22,39 @@ brew install neovim
 
 nvim -v
 
-# Install lazyvim
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
+brew install rm-improved # rip -> save rm
+brew install lazygit
 
 # Dependencies
 sudo apt install ripgrep -y
 sudo apt install fd-find -y
 ln -s $(which fdfind) ~/.local/bin/fd
 
-# https://www.nerdfonts.com/
-# unzip to ~/.fonts
+echo "Download fonts from https://www.nerdfonts.com/ and unzip them to ~/.fonts/"
 
 
-# Run :LazyHealth after
-echo "Run :LazyHealth in nvim"
+echo "Choose option:"
+echo "1: Install LazyVim"
+echo "2: Install AstroNvim"
+echo "3: Rename old Nvim config to .bak"
+echo "q: Quit"
+read -n1 option
 
-#echo "alias vim='nvim'" >> ~/.aliases
+if [[ $option == 1 ]]; then
+  # Install lazyvim
+  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  rm -rf ~/.config/nvim/.git
+elif [[ $option == 2 ]]; then
+  # Install astrovim
+  git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
+  rm -rf ~/.config/nvim/.git
+elif [[ $option == 3 ]]; then
+  mv ~/.config/nvim ~/.config/nvim.bak
+  mv ~/.local/share/nvim ~/.local/share/nvim.bak
+  mv ~/.local/state/nvim ~/.local/state/nvim.bak
+  mv ~/.cache/nvim ~/.cache/nvim.bak    
+fi
 
-brew install rm-improved # rip -> save rm
 
-brew install lazygit
+echo "alias vim='nvim'" >> ~/.aliases
+
