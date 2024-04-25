@@ -34,13 +34,17 @@ echo "Download fonts from https://www.nerdfonts.com/ and unzip them to ~/.fonts/
 
 
 echo "Choose option:"
+echo "0: Link saved configuration"
 echo "1: Install LazyVim"
 echo "2: Install AstroNvim"
 echo "3: Rename old Nvim config to .bak"
 echo "q: Quit"
 read -n1 option
 
-if [[ $option == 1 ]]; then
+if [[ $option == 0 ]]; then
+  # Link existing config
+  ln -s ./configs/nvim ~/.config/nvim
+elif [[ $option == 1 ]]; then
   # Install lazyvim
   git clone https://github.com/LazyVim/starter ~/.config/nvim
   rm -rf ~/.config/nvim/.git

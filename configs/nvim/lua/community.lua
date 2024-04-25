@@ -9,7 +9,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
-  
+
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.python" },
@@ -23,9 +23,10 @@ return {
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.test.neotest" },
 
-
   { import = "astrocommunity.editing-support.refactoring-nvim" },
 
   { import = "astrocommunity.code-runner.sniprun" },
   { import = "astrocommunity.comment.mini-comment" },
+  { import = "astrocommunity.motion.flash-nvim" },
+  { import = "astrocommunity.motion.mini.move" }, -- Alt + hjkl
 }
