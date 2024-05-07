@@ -19,14 +19,15 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.pack.sql" },
+  -- { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.test.neotest" },
 
   { import = "astrocommunity.editing-support.refactoring-nvim" },
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
 
   { import = "astrocommunity.code-runner.sniprun" },
   { import = "astrocommunity.comment.mini-comment" },
-  { import = "astrocommunity.motion.flash-nvim" },
-  { import = "astrocommunity.motion.mini.move" }, -- Alt + hjkl
+  { import = "astrocommunity.motion.flash-nvim" }, -- s or S
+  -- { import = "astrocommunity.motion.mini.move" }, -- Alt + hjkl; Fails to install
 }
