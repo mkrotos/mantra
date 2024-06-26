@@ -22,6 +22,7 @@ else
 	# Install zsh
 	sudo apt install zsh -y
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	ln -s ./.aliases ~/.aliases #needs to be changed to absolute path
 fi
 
 # Have to reboot to apply changes
