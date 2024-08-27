@@ -23,6 +23,8 @@ else
 	sudo apt install zsh -y
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	ln -s ./.aliases ~/.aliases #needs to be changed to absolute path
+	sudo apt install zsh-syntax-highlighting
+	echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >>${ZDOTDIR:-$HOME}/.zshrc
 fi
 
 # Have to reboot to apply changes

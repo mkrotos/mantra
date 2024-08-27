@@ -38,6 +38,7 @@ sdk install kotlin
 sudo apt install snapd -y
 sudo snap install code --classic
 sudo snap install intellij-idea-community --classic
+sudo snap install rustrover --classic
 #sudo snap install docker #docker from snap have bugs
 sudo snap install postman
 sudo snap install node --classic

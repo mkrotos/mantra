@@ -25,6 +25,7 @@ return {
 
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.editing-support.auto-save-nvim" },
 
   { import = "astrocommunity.code-runner.sniprun" },
   { import = "astrocommunity.comment.mini-comment" },
